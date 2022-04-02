@@ -1,0 +1,36 @@
+Algorithm
+===============
+1.  pwr_state == on;
+2. Send(pwr_state);
+3. Send(rdy_cmd)
+4. fngr_mod begins;
+5. if fingerprint detected, send( fngr_value). //Sending fingerprint value
+6. if receive(auth)==true && auth==true
+7. log_status = true;
+8. set_opFlag = true; //Switching to operation mode
+9. ListeningLoop begins;
+10. receive(cmd)==true &&  cmdTable[cmd] == true
+11. execute(cmd);
+12. if error_state == false
+13. send(cmd_rt_val);
+14. else send(error_code);
+15. return to ListeningLoop;
+16. if receive(cmd) == exit
+17. exit from the loop 
+18. start shutdown procedure
+19. Shut system down.
+
+================================================================
+Commands
+================================================================
+1. pwr_on   //Power on commands
+2. pwr_off  //Power off
+3. rdy      //System ready
+4. opn      //Open deck
+5. cls      //Close deck
+6. slt      //select port
+7. 
+================================================================
+CHALLENGES
+================================================================
+1. Moto selection and controls

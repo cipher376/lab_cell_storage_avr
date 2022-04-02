@@ -1,0 +1,20 @@
+#ifndef F_CPU
+#define F_CPU 16000000UL // or whatever may be your frequency
+#endif
+ 
+#include <avr/io.h>
+#include <util/delay.h>                // for _delay_ms()
+
+//Using port D as output 
+DDRD = 0xff; 
+
+//Initialize deck array
+unsigned char[][] decks ;
+
+int main(void)
+{
+    while(1)
+    {
+       
+    }
+}

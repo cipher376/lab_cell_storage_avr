@@ -1,0 +1,11 @@
+#1/bin/bash
+MCU = "atmega328p"
+rm*.elf*.hex*.o;
+avr-gcc -g -0s -mmcu-$mcu -c $1.c
+read;
+avr-gcc -g -mmcu-$mcu -0 $1.elf $1.o
+read;
+avr-objcopy -0 lhex $1.elf $1.hex
+read
+avrdude -c/usr/share/arduino/hardware/tools/avrdude.conf -v -v -v -v -patmega328p -carduino -p/dev/ttyACMO -b115200 -D -uflash:w:$1.hex:l
+read
